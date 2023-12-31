@@ -80,6 +80,7 @@ function newGame() {
     guessCount = 0;
     arr= [];
     guessSlot.innerHTML=""
+    remaining.innerHTML=""
     lowOrHi.innerHTML=""
     startOver.removeChild(p);
     isPlaying = true;
