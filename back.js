@@ -27,7 +27,7 @@ function validation(guess) {
   } else {
     arr.push(guess);
     console.log(arr);
-    if (guessCount === 9) {
+    if (guessCount === 10) {
       displayGuess(guess);
       displayMessage(`Game over. The random number was ${randomNumber}`);
       endgame();
@@ -45,7 +45,13 @@ function checkGuess(guess) {
     endgame();
   } else if (guess > randomNumber) {
     displayMessage(`The number is lesser than ${guess}`);
-  } else {
+  } 
+  else if(guess!==randomNumber && guessCount==10){
+    //console.log("chicken");
+      displayMessage(`Game over. The random number was ${randomNumber}`);
+      endgame();
+  }
+  else {
     displayMessage(`The number is greater than ${guess}`);
   }
 }
