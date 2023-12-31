@@ -26,26 +26,37 @@ function validation(guess) {
     alert('invalid entry');
   } else {
     arr.push(guess);
-    console.log(arr);
-    if (guessCount === 10) {
-      displayGuess(guess);
-      displayMessage(`Game over. The random number was ${randomNumber}`);
-      endgame();
-    } else {
-      displayGuess(guess);
-      checkGuess(guess);
-    }
+  
+    checkGuess(guess);
+    displayGuess(guess);
+    
+    
+    // { 
+    //   // console.log("beek");
+    //   checkGuess(guess);
+    //   displayGuess(guess);
+    //   // displayMessage(`Game over. The random number was ${randomNumber}`);
+    //   // console.log("van");
+    //   // endgame();
+    // } else {
+    //   checkGuess(guess);
+    //   displayGuess(guess);
+     
+    // }
   }
 }
 
 function checkGuess(guess) {
+
   if (guess === randomNumber) {
     displayMessage("You guessed the number right!");
+    // console.log("logan");
     // tag.innerHTML="WINNER";
     endgame();
-  } 
-    else if(guess!==randomNumber && guessCount==10){
-    //console.log("chicken");
+    
+  }
+  else if(guess!==randomNumber && guessCount==9){
+    // console.log("chicken");
       displayMessage(`Game over. The random number was ${randomNumber}`);
       endgame();
   }
@@ -66,10 +77,12 @@ function displayGuess(guess) {
   userInput.value = '';
   guessSlot.innerHTML += `${guess}, `;
   guessCount++;
+  // console.log(guessCount)
   remaining.innerHTML = `${10 - guessCount}`;
 }
 
 function endgame() {
+  // console.log("cric");
   userInput.value = '';
   userInput.setAttribute('disabled', '');
   p.classList.add('button'); //f ar9d
@@ -88,7 +101,7 @@ function newGame() {
     guessCount = 0;
     arr= [];
     guessSlot.innerHTML=""
-    remaining.innerHTML=""
+    remaining,innerHTML=""
     lowOrHi.innerHTML=""
     startOver.removeChild(p);
     isPlaying = true;
