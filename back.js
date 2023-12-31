@@ -43,14 +43,16 @@ function checkGuess(guess) {
     displayMessage("You guessed the number right!");
     // tag.innerHTML="WINNER";
     endgame();
-  } else if (guess > randomNumber) {
-    displayMessage(`The number is lesser than ${guess}`);
   } 
-  else if(guess!==randomNumber && guessCount==10){
+    else if(guess!==randomNumber && guessCount==10){
     //console.log("chicken");
       displayMessage(`Game over. The random number was ${randomNumber}`);
       endgame();
   }
+  else if (guess > randomNumber) {
+    displayMessage(`The number is lesser than ${guess}`);
+  } 
+
   else {
     displayMessage(`The number is greater than ${guess}`);
   }
